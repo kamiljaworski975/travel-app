@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "../OrderOption.scss";
+import React from 'react';
+import styles from '../OrderOption.module.scss';
 
-import Icon from "../../../common/Icon/Icon";
-import { formatPrice } from "../../../../utils/formatPrice";
+import Icon from '../../../common/Icon/Icon';
+import { formatPrice } from '../../../../utils/formatPrice';
 
 const OrderOptionIcons = ({
   required,
@@ -12,10 +12,10 @@ const OrderOptionIcons = ({
 }) => (
   <div>
     {required ? (
-      ""
+      ''
     ) : (
-      <div onClick={() => setOptionValue("")}>
-        <Icon name="times-circle" />
+      <div onClick={() => setOptionValue('')}>
+        <Icon name='times-circle' />
         <span>None</span>
       </div>
     )}

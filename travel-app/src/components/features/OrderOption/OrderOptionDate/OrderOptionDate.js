@@ -1,15 +1,15 @@
-import React from "react";
-import DatePicker from "react-datepicker";
+import React from 'react';
+import DatePicker from 'react-datepicker';
 
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
-import styles from "../OrderOption.scss";
+import 'react-datepicker/dist/react-datepicker.css';
+import styles from '../OrderOption.module.scss';
 
 const addDays = (date, days) => {
   let result = new Date(date);
   result.setDate(result.getDate() + days);
-  const ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(result);
-  const mo = new Intl.DateTimeFormat("en", { month: "2-digit" }).format(result);
-  const da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(result);
+  const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(result);
+  const mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(result);
+  const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(result);
   const formatDate = `${da}/${mo}/${ye}`;
 
   return formatDate;
@@ -24,7 +24,7 @@ const OrderOptionDate = ({ setOptionValue, currentValue }) => {
       <DatePicker
         className={styles.datePick}
         selected={currentValue ? currentValue : startDate}
-        dateFormat="dd/MM/yyyy"
+        dateFormat='dd/MM/yyyy'
         onChange={(date) =>
           setOptionValue(date <= startDate ? currentValue : date)
         }

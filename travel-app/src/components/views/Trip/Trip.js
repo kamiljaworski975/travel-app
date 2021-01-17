@@ -1,19 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
-import HTMLParser from "react-html-parser";
+import React from 'react';
+import PropTypes from 'prop-types';
+import HTMLParser from 'react-html-parser';
 
-import NotFound from "../NotFound/NotFound";
-import Section from "../../layout/Section/Section";
-import PageTitle from "../../common/PageTitle/PageTitle";
-import SideImage from "../../common/SideImage/SideImage";
-import DetailsBox from "../../common/DetailsBox/DetailsBox";
-import DetailsImage from "../../common/DetailsImage/DetailsImage";
-import List from "../../common/List/List";
-import ListItem from "../../common/ListItem/ListItem";
-import OrderForm from "../../features/OrderForm/OrderFormContainer";
+import NotFound from '../NotFound/NotFound';
+import Section from '../../layout/Section/Section';
+import PageTitle from '../../common/PageTitle/PageTitle';
+import SideImage from '../../common/SideImage/SideImage';
+import DetailsBox from '../../common/DetailsBox/DetailsBox';
+import DetailsImage from '../../common/DetailsImage/DetailsImage';
+import List from '../../common/List/List';
+import ListItem from '../../common/ListItem/ListItem';
+import OrderForm from '../../features/OrderForm/OrderFormContainer';
 
-import styles from "./Trip.scss";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import styles from './Trip.module.scss';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Trip = ({
   error,
@@ -40,14 +40,14 @@ const Trip = ({
             <Row>
               <Col md={12} lg={4}>
                 <div className={styles.intro}>{HTMLParser(intro)}</div>
-                <List variant="light">
+                <List variant='light'>
                   <ListItem
                     title={`<strong>Duration:</strong> ${days} days`}
-                    icon="calendar-alt"
+                    icon='calendar-alt'
                   />
                   <ListItem
                     title={`<strong>Price:</strong> from ${cost}`}
-                    icon="money-bill-wave"
+                    icon='money-bill-wave'
                   />
                 </List>
               </Col>
@@ -57,7 +57,7 @@ const Trip = ({
         <Grid>
           <Row>
             <Col xs={12}>
-              <PageTitle text="Trip details" />
+              <PageTitle text='Trip details' />
               {HTMLParser(description)}
             </Col>
           </Row>
@@ -72,20 +72,20 @@ const Trip = ({
           <Grid>
             <Row>
               <Col md={12} lg={4}>
-                <List variant="light">
+                <List variant='light'>
                   <ListItem
                     title={`<strong>Capital:</strong> ${country.capital}`}
-                    icon="city"
+                    icon='city'
                   />
                   <ListItem
                     title={`<strong>Population:</strong> ${
                       country.population / 1000000
                     } millions`}
-                    icon="users"
+                    icon='users'
                   />
                   <ListItem
                     title={`<strong>Currency:</strong> ${country.currencies[0].symbol} (${country.currencies[0].name})`}
-                    icon="money-bill-wave"
+                    icon='money-bill-wave'
                   />
                 </List>
               </Col>
@@ -95,7 +95,7 @@ const Trip = ({
         <Grid>
           <Row>
             <Col xs={12}>
-              <PageTitle text="Trip options" />
+              <PageTitle text='Trip options' />
               <OrderForm tripCost={cost} />
             </Col>
           </Row>

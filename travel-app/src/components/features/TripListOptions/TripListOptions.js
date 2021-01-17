@@ -1,26 +1,26 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./TripListOptions.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './TripListOptions.module.scss';
 
-import { Row, Col } from "react-flexbox-grid";
+import { Row, Col } from 'react-flexbox-grid';
 
 class TripListOptions extends React.Component {
   handleTags(tag, checked) {
     if (checked) {
-      console.log("Adding tag", tag);
+      console.log('Adding tag', tag);
       this.props.changeTags(tag);
     } else {
-      console.log("Removing tag", tag);
+      console.log('Removing tag', tag);
       this.props.changeTags(tag);
     }
   }
 
   handleDuration(type, value) {
     console.log(
-      "Changing duration",
+      'Changing duration',
       type,
       value,
-      "props",
+      'props',
       this.props.filters.duration
     );
     // TODO - use action dispatcher from props
@@ -36,14 +36,14 @@ class TripListOptions extends React.Component {
     console.log(tags, filters);
     return (
       <div className={styles.component}>
-        <Row around="lg">
+        <Row around='lg'>
           <Col lg={4}>
             <div className={styles.filter}>
               <label>
                 <input
                   className={`${styles.input} ${styles.search}`}
-                  type="text"
-                  placeholder="Search..."
+                  type='text'
+                  placeholder='Search...'
                   value={filters.phrase}
                   onChange={(event) =>
                     this.handleSearch(event.currentTarget.value)
@@ -58,12 +58,12 @@ class TripListOptions extends React.Component {
                 Duration from:
                 <input
                   className={`${styles.input} ${styles.number}`}
-                  type="number"
+                  type='number'
                   value={filters.duration.from}
-                  min="1"
-                  max="14"
+                  min='1'
+                  max='14'
                   onChange={(event) =>
-                    this.handleDuration("from", event.currentTarget.value)
+                    this.handleDuration('from', event.currentTarget.value)
                   }
                 />
               </label>
@@ -71,12 +71,12 @@ class TripListOptions extends React.Component {
                 to:
                 <input
                   className={`${styles.input} ${styles.number}`}
-                  type="number"
+                  type='number'
                   value={filters.duration.to}
-                  min="1"
-                  max="14"
+                  min='1'
+                  max='14'
                   onChange={(event) =>
-                    this.handleDuration("to", event.currentTarget.value)
+                    this.handleDuration('to', event.currentTarget.value)
                   }
                 />
               </label>
@@ -90,7 +90,7 @@ class TripListOptions extends React.Component {
                   {Object.keys(tags).map((tag) => (
                     <label key={tag} className={styles.option}>
                       <input
-                        type="checkbox"
+                        type='checkbox'
                         checked={filters.tags.indexOf(tag) > -1}
                         onChange={(event) =>
                           this.handleTags(tag, event.currentTarget.checked)

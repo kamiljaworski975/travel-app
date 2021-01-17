@@ -1,11 +1,11 @@
-import React from "react";
-import styles from "../OrderOption.scss";
+import React from 'react';
+import styles from '../OrderOption.module.scss';
 
 const OrderOptionNumber = ({ setOptionValue, currentValue, limits }) => (
   <div className={styles.number}>
     <input
       className={styles.inputSmall}
-      type="number"
+      type='number'
       value={currentValue}
       min={limits.min}
       max={limits.max}

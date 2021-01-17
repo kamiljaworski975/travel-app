@@ -5,7 +5,9 @@ import { AnimatedSwitch } from 'react-router-transition';
 import PropTypes from 'prop-types';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
-import './App.scss';
+import './App.module.scss';
+
+import ScrollTop from './components/features/ScrollTop/ScrollTop';
 
 import Home from './components/views/Home/Home';
 import Trips from './components/views/Trips/TripsContainer';
@@ -41,24 +43,26 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <MainLayout>
-          <AnimatedSwitch
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 1 }}
-            atActive={{ opacity: 1 }}
-            className='switch-wrapper'
-          >
-            <Route exact path='/' component={Home} />
-            <Route exact path='/trips' component={Trips} />
-            <Route exact path='/countries' component={Countries} />
-            <Route exact path='/regions' component={Regions} />
-            <Route exact path='/info' component={Info} />
-            <Route exact path='/trip/:id' component={TripContainer} />
-            <Route exact path='/country/:id' component={Country} />
+        <ScrollTop>
+          <MainLayout>
+            <AnimatedSwitch
+              atEnter={{ opacity: 0 }}
+              atLeave={{ opacity: 1 }}
+              atActive={{ opacity: 1 }}
+              className='switch-wrapper'
+            >
+              <Route exact path='/' component={Home} />
+              <Route exact path='/trips' component={Trips} />
+              <Route exact path='/countries' component={Countries} />
+              <Route exact path='/regions' component={Regions} />
+              <Route exact path='/info' component={Info} />
+              <Route exact path='/trip/:id' component={TripContainer} />
+              <Route exact path='/country/:id' component={Country} />
 
-            <Route path='*' component={NotFound} />
-          </AnimatedSwitch>
-        </MainLayout>
+              <Route path='*' component={NotFound} />
+            </AnimatedSwitch>
+          </MainLayout>
+        </ScrollTop>
       </BrowserRouter>
     );
   }

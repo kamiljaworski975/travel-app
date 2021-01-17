@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "../OrderOption.scss";
+import React from 'react';
+import styles from '../OrderOption.module.scss';
 
-import { formatPrice } from "../../../../utils/formatPrice";
+import { formatPrice } from '../../../../utils/formatPrice';
 
 const OrderOptionDropdown = ({
   currentValue,
@@ -16,9 +16,9 @@ const OrderOptionDropdown = ({
       onChange={(event) => setOptionValue(event.currentTarget.value)}
     >
       {required ? (
-        ""
+        ''
       ) : (
-        <option key="null" value="">
+        <option key='null' value=''>
           ---
         </option>
       )}

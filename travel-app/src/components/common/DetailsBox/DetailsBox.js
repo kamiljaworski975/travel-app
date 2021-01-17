@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './DetailsBox.scss';
+import styles from './DetailsBox.module.scss';
 
-const DetailsBox = ({variant = '', children, ...otherProps}) => (
-  <article {...otherProps} className={styles.component + variant.split(' ').map(name => ' ' + (styles[name] || name)).join('')}>
+const DetailsBox = ({ variant = '', children, ...otherProps }) => (
+  <article
+    {...otherProps}
+    className={
+      styles.component +
+      variant
+        .split(' ')
+        .map((name) => ' ' + (styles[name] || name))
+        .join('')
+    }
+  >
     {children}
   </article>
 );

@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "../OrderOption.scss";
+import React from 'react';
+import styles from '../OrderOption.module.scss';
 
-import { formatPrice } from "../../../../utils/formatPrice";
+import { formatPrice } from '../../../../utils/formatPrice';
 
 const newValueSet = (currentValue, id, checked) => {
   if (checked) {
@@ -18,7 +18,8 @@ const OrderOptionCheckboxes = ({ currentValue, values, setOptionValue }) => {
         return (
           <label key={value.id}>
             <input
-              type="checkbox"
+              style={{ marginRight: '10px' }}
+              type='checkbox'
               value={value.id}
               checked={currentValue.indexOf(value.id) > -1 ? true : false}
               onChange={(event) =>

@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./OrderSummary.scss";
+import React from 'react';
+import styles from './OrderSummary.module.scss';
 
-import { calculateTotal } from "../../../utils/calculateTotal";
-import { formatPrice } from "../../../utils/formatPrice";
+import { calculateTotal } from '../../../utils/calculateTotal';
+import { formatPrice } from '../../../utils/formatPrice';
 
 const OrderSummary = ({ options, tripCost }) => {
   return (
